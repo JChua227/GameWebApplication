@@ -1,0 +1,13 @@
+header{
+  font-style: oblique;
+  font-weight: 700;
+}
+
+body {
+    background-image: linear-gradient(to bottom right,rgba(130, 30, 160, 0.712),#094C64,rgba(33, 171, 221, 0.699), rgba(59, 180, 134, 0.747));
+    height: 100vh;  
+  }
+
+.GameText{
+    color: white;
+}
