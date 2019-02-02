@@ -1,6 +1,7 @@
 header{
   font-style: oblique;
   font-weight: 700;
+  text-align: center;
 }
 
 body {
@@ -10,4 +11,8 @@ body {
 
 .GameText{
     color: white;
+}
+
+.test{
+  color: yellow;
 }
