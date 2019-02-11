@@ -41,6 +41,8 @@ function input(x,y){
 
     if(checktie()){
         alert("Its a tie!");
+        player1score += .5;
+        player2score += .5;
         resetboard();
     }
 }
