@@ -9,8 +9,9 @@ function resetboard(){
     if(player1score+player2score>0){
         for(let x=0; x<3; x++){
             for(let y=0; y<3; y++){
-                if(grid[x][y]!=0)
+                if(grid[x][y]!=0){
                     document.getElementById(x + "," + y).disabled=false;
+                }
             }
         }
     }
@@ -36,6 +37,11 @@ function input(x,y){
             player2score++;
             resetboard();
         }
+    }
+
+    if(checktie()){
+        alert("Its a tie!");
+        resetboard();
     }
 }
 
@@ -72,6 +78,21 @@ function check(playervalue){
         return true;
     }
     if(grid[2][0]==playervalue && grid[1][1]==playervalue && grid[0][2]){
+        return true;
+    }
+}
+
+function checktie(){
+    let counter=0;
+    for(let x=0; x<3; x++){
+        for(let y=0; y<3; y++){
+            if(grid[x][y]!=0){
+                counter++;
+            }
+        }
+    }
+
+    if(counter==9){
         return true;
     }
 }
