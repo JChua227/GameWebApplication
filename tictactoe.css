@@ -7,3 +7,7 @@ tr,td{
 table{
     margin: auto;
 }
+
+.player1score,.player2score{
+    text-align: center;
+}
