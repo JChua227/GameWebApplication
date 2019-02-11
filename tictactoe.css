@@ -6,6 +6,8 @@ tr,td{
 
 table{
     margin: auto;
+    text-align: center;
+    font-size: 45px;
 }
 
 .player1score,.player2score{
