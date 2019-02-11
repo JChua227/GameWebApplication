@@ -12,6 +12,7 @@ function resetboard(){
             for(let y=0; y<3; y++){
                 if(grid[x][y]!=0){
                     document.getElementById(x + "," + y).disabled=false;
+                    document.getElementById(x + " " + y).innerHTML="";
                 }
             }
         }
@@ -24,6 +25,7 @@ function input(x,y){
     if(playercounter%2==0){
         grid[x][y]=1;
         document.getElementById(x + "," + y).disabled=true;
+        document.getElementById(x + " " + y).innerHTML="X";
         if(check(1)){
             alert("Player 1 wins!");
             player1score++;
@@ -34,6 +36,7 @@ function input(x,y){
     else{
         grid[x][y]=2;
         document.getElementById(x + "," + y).disabled=true;
+        document.getElementById(x + " " + y).innerHTML="O";
         if(check(2)){
             alert("Player 2 wins!");
             player2score++;
