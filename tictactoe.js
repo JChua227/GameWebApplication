@@ -4,6 +4,7 @@ var player1score=0;
 var player2score=0;
 resetboard();
 
+
 function resetboard(){
     playercounter=-1;
     if(player1score+player2score>0){
@@ -26,6 +27,7 @@ function input(x,y){
         if(check(1)){
             alert("Player 1 wins!");
             player1score++;
+            document.getElementById("player1score").innerHTML="Player 1: " + player1score;
             resetboard();
         }
     }
@@ -35,6 +37,7 @@ function input(x,y){
         if(check(2)){
             alert("Player 2 wins!");
             player2score++;
+            document.getElementById("player2score").innerHTML="Player 2: " + player2score;
             resetboard();
         }
     }
