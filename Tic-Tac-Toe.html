@@ -4,16 +4,41 @@
     <title>Tic-Tac-Toe</title>
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="tictactoe.css" rel="stylesheet" type="text/css">
+    <script src="tictactoe.js"></script>
 </head>
 
 
 <body>
-    <main>
+    <header>
         <h1>Tic-Tac-Toe</h1>
         <nav>
             <a href="index.html"><strong>Home</strong></a> |
             <a href="about.html"><strong>About</strong></a>
         </nav>
+    </header>
+
+    <main>
+        <p id="player1score"></p>
+        <p id="player2score"></p>
+
+        <table>
+            <tr>
+                <td id="0,0" onclick="input(0,0)"></td>
+                <td id="0,1" onclick="input(0,1)"></td>
+                <td id="0,2" onclick="input(0,2)"></td>
+            </tr>
+            <tr>
+                <td id="1,0" onclick="input(1,0)"></td>
+                <td id="1,1" onclick="input(1,1)"></td>
+                <td id="1,2" onclick="input(1,2)"></td>
+            </tr>
+            <tr>
+                <td id="2,0" onclick="input(2,0)"></td>
+                <td id="2,1" onclick="input(2,1)"></td>
+                <td id="2,2" onclick="input(2,2)"></td>
+            </tr>
+        </table>
     </main>
 </body>
 </html>
