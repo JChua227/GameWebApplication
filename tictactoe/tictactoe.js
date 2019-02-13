@@ -4,7 +4,7 @@ var player1score=0;
 var player2score=0;
 resetboard();
 
-
+//resetting board beginning/end of a game
 function resetboard(){
     playercounter=-1;
     if(player1score+player2score>0){
@@ -20,8 +20,18 @@ function resetboard(){
     grid=[[0,0,0],[0,0,0],[0,0,0]];
 }
 
+//player input
 function input(x,y){
     playercounter++;
+
+    //disable not working...this fixes it a little
+    //stops player from marking that spot
+    //then gives player another turn until they hit a valid spot
+    if(grid[x][y]!=0){
+        playercounter--;
+        return;
+    }
+
     if(playercounter%2==0){
         grid[x][y]=1;
         document.getElementById(x + "," + y).disabled=true;
@@ -55,7 +65,7 @@ function input(x,y){
     }
 }
 
-
+//checks for win condition
 function check(playervalue){
     for(let x=0; x<3; x++){
         let counter=0;
@@ -92,6 +102,7 @@ function check(playervalue){
     }
 }
 
+//checks for tie condition
 function checktie(){
     let counter=0;
     for(let x=0; x<3; x++){
