@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Tic-Tac-Toe</title>
+    <meta charset="UTF-8">
+    <link href="..\style.css" rel="stylesheet" type="text/css">
+    <link href="tictactoe.css" rel="stylesheet" type="text/css">
+    <script src="tictactoe.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <h1>Tic-Tac-Toe</h1>
+        <nav>
+            <a href="..\index.html"><strong>Home</strong></a> |
+            <a href="..\about.html"><strong>About</strong></a>
+        </nav>
+    </header>
+
+    <main>
+        <p class="player1score" id="player1score">Player 1: 0</p>
+        <p class="player2score" id="player2score">Player 2: 0</p>
+
+        <table id="table">
+            <tr>
+                <td id="0,0" onclick="input(0,0)"><p id="0 0"></p></td>
+                <td id="0,1" onclick="input(0,1)"><p id="0 1"></p></td>
+                <td id="0,2" onclick="input(0,2)"><p id="0 2"></p></td>
+            </tr>
+            <tr>
+                <td id="1,0" onclick="input(1,0)"><p id="1 0"></p></td>
+                <td id="1,1" onclick="input(1,1)"><p id="1 1"></p></td>
+                <td id="1,2" onclick="input(1,2)"><p id="1 2"></p></td>
+            </tr>
+            <tr>
+                <td id="2,0" onclick="input(2,0)"><p id="2 0"></p></td>
+                <td id="2,1" onclick="input(2,1)"><p id="2 1"></p></td>
+                <td id="2,2" onclick="input(2,2)"><p id="2 2"></p></td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

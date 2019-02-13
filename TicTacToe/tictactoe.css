@@ -1,0 +1,15 @@
+tr,td{
+    border: 1px solid black;
+    width: 150px;
+    height: 150px; 
+}
+
+table{
+    margin: auto;
+    text-align: center;
+    font-size: 45px;
+}
+
+.player1score,.player2score{
+    text-align: center;
+}
