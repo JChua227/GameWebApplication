@@ -36,23 +36,28 @@ function input(x,y){
         grid[x][y]=1;
         document.getElementById(x + "," + y).disabled=true;
         document.getElementById(x + " " + y).innerHTML="X";
-        if(check(1)){
-            alert("Player 1 wins!");
-            player1score++;
-            document.getElementById("player1score").innerHTML="Player 1: " + player1score;
-            resetboard();
-        }
+        setTimeout(function(){
+            if(check(1)){
+                alert("Player 1 wins!");
+                player1score++;
+                document.getElementById("player1score").innerHTML="Player 1: " + player1score;
+                resetboard();
+            }
+        }, 0);
+
     }
     else{
         grid[x][y]=2;
         document.getElementById(x + "," + y).disabled=true;
         document.getElementById(x + " " + y).innerHTML="O";
-        if(check(2)){
-            alert("Player 2 wins!");
-            player2score++;
-            document.getElementById("player2score").innerHTML="Player 2: " + player2score;
-            resetboard();
-        }
+        setTimeout(function(){
+            if(check(2)){
+                alert("Player 2 wins!");
+                player2score++;
+                document.getElementById("player2score").innerHTML="Player 2: " + player2score;
+                resetboard();
+            }
+        }, 0);
     }
 
     if(checktie()){
