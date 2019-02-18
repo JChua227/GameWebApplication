@@ -102,7 +102,7 @@ function check(playervalue){
     if(grid[0][0]==playervalue && grid[1][1]==playervalue && grid[2][2]==playervalue){
         return true;
     }
-    if(grid[2][0]==playervalue && grid[1][1]==playervalue && grid[0][2]){
+    if(grid[2][0]==playervalue && grid[1][1]==playervalue && grid[0][2]==playervalue){
         return true;
     }
 }
