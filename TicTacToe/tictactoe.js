@@ -32,6 +32,7 @@ function input(x,y){
         return;
     }
 
+    //player move
     if(playercounter%2==0){
         grid[x][y]=1;
         document.getElementById(x + "," + y).disabled=true;
@@ -60,14 +61,17 @@ function input(x,y){
         }, 15);
     }
 
-    if(checktie()){
-        alert("Its a tie!");
-        player1score += .5;
-        player2score += .5;
-        document.getElementById("player1score").innerHTML="Player 1: " + player1score;
-        document.getElementById("player2score").innerHTML="Player 2: " + player2score;
-        resetboard();
-    }
+    //check for tie
+    setTimeout(function(){
+        if(checktie()){
+            alert("Its a tie!");
+            player1score += .5;
+            player2score += .5;
+            document.getElementById("player1score").innerHTML="Player 1: " + player1score;
+            document.getElementById("player2score").innerHTML="Player 2: " + player2score;
+            resetboard();
+        }
+    }, 15);
 }
 
 //checks for win condition
