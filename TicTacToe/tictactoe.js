@@ -43,7 +43,7 @@ function input(x,y){
                 document.getElementById("player1score").innerHTML="Player 1: " + player1score;
                 resetboard();
             }
-        }, 0);
+        }, 15);
 
     }
     else{
@@ -57,7 +57,7 @@ function input(x,y){
                 document.getElementById("player2score").innerHTML="Player 2: " + player2score;
                 resetboard();
             }
-        }, 0);
+        }, 15);
     }
 
     if(checktie()){
