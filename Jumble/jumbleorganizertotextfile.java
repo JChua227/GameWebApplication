@@ -9,12 +9,14 @@ public class jumbleorganizertotextfile{
 	static List<String> parentword = new ArrayList<>();
 	static List<List<String>> childandparentwords= new ArrayList<>();
 	static List<List<String>> nonduplicates = new ArrayList<>();
+	
+	static List<String> dup = new ArrayList<>();
 
 	public static void main(String []args)throws IOException {
 		
 		List<String> list = new ArrayList<>();
 		try {
-			FileReader f = new FileReader("temptest.txt");
+			FileReader f = new FileReader("wordlist.txt");
 			BufferedReader br = new BufferedReader(f);
 			String line;
 			
@@ -22,6 +24,7 @@ public class jumbleorganizertotextfile{
 				if(!list.contains(line)) {
 					list.add(line);
 				}
+				System.out.println("Reading words: " + list.size());
 			}
 			br.close();
 			
@@ -38,11 +41,18 @@ public class jumbleorganizertotextfile{
 	public static void words(List<String> wordlist) {
 		
 		for(int y=0; y<wordlist.size(); y++) {
+			
+			//skips reoccuring word?
+			if(dup.contains(wordlist.get(y))){
+				continue;
+			}
+			
 			//builds first word
 			List<Character> list1 = new ArrayList<>();
 			for(int x=0; x<wordlist.get(y).length(); x++) {
 				list1.add(wordlist.get(y).charAt(x));
 			}
+			
 			
 			//builds all other words
 			List<String> childword = new ArrayList<String>();
@@ -70,6 +80,9 @@ public class jumbleorganizertotextfile{
 				if(list2.isEmpty()) {
 					if(!childword.contains(wordlist.get(z))){
 						childword.add(wordlist.get(z));
+						if(wordlist.get(z).length()==wordlist.get(y).length()) {
+							dup.add(wordlist.get(z));
+						}
 					}
 					if(!parentword.contains(wordlist.get(y))) {
 						parentword.add(wordlist.get(y));
@@ -82,8 +95,9 @@ public class jumbleorganizertotextfile{
 			}
 			System.out.println("Creating parent/child words: " + (y+1) + "/" + wordlist.size());
 		}
-		System.out.println(listofchildword);
-		System.out.println(parentword);
+		
+//		System.out.println(listofchildword);
+//		System.out.println(parentword);
 //		System.out.println("---------------------------------------------------------------------------------------------------------------");
 		
 		attach();
@@ -103,30 +117,30 @@ public class jumbleorganizertotextfile{
 			System.out.println("Pushing both words: " + (y+1) + "/" + parentword.size());
 		}
 		
-		//System.out.println(childandparentwords);
-		for(int y=0; y<childandparentwords.size(); y++) {
-			for(int z=y+1; z<childandparentwords.size(); z++) {
-				
-				//creating temp lists that stores each list to compare
-				List<String> list1 = new ArrayList<>();
-				List<String> list2 = new ArrayList<>();
-				list1.addAll(childandparentwords.get(y));
-				list2.addAll(childandparentwords.get(z));
-				for(int x=0; x<list2.size(); x++) {
-					if(list1.contains(list2.get(x))) {
-						list1.remove(list1.indexOf(list2.get(x)));
-						list2.remove(x);
-						x--;
-					}
-				}
-				//System.out.println(list1 + " " + list2);
-				if(list2.isEmpty() && list1.isEmpty()) {
-					childandparentwords.remove(z);
-					z--;
-				}
-			}
-			System.out.println("Getting rid of duplicates: " + (y+1) + "/" + childandparentwords.size());
-		}
+		//getting rid of duplicate lists brute force
+//		for(int y=0; y<childandparentwords.size(); y++) {
+//			for(int z=y+1; z<childandparentwords.size(); z++) {
+//				
+//				//creating temp lists that stores each list to compare
+//				List<String> list1 = new ArrayList<>();
+//				List<String> list2 = new ArrayList<>();
+//				list1.addAll(childandparentwords.get(y));
+//				list2.addAll(childandparentwords.get(z));
+//				for(int x=0; x<list2.size(); x++) {
+//					if(list1.contains(list2.get(x))) {
+//						list1.remove(list1.indexOf(list2.get(x)));
+//						list2.remove(x);
+//						x--;
+//					}
+//				}
+//				//System.out.println(list1 + " " + list2);
+//				if(list2.isEmpty() && list1.isEmpty()) {
+//					childandparentwords.remove(z);
+//					z--;
+//				}
+//			}
+//			System.out.println("Getting rid of duplicates: " + (y+1) + "/" + childandparentwords.size());
+//		}
 		
 //		System.out.println(childandparentwords);
 //		System.out.println("---------------------------------------------------------------------------------------------------------------");
