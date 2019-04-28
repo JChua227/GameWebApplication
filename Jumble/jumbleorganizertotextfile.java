@@ -151,15 +151,15 @@ public class jumbleorganizertotextfile{
 	
 	public static void writetofile() {
 		try {
-			int levelindicator[][]= {{3,5},{9,18},{1,3}};
-			for(int x=0; x<3; x++) {
+			int levelindicator[][]= {{4,6},{7,10},{11,15},{16,20},{21,30},{31,45},{46,60},{61,75},{76,150},{151,300},{301,700},{701,99999999}};
+			for(int x=0; x<levelindicator.length; x++) {
 				int temper = x+1;
 				String temp = (temper)+".txt";
 				File filter1 = new File(temp);
 				filter1.createNewFile();
 				FileWriter filewrite = new FileWriter(filter1);
 				for(int y=0; y<childandparentwords.size(); y++) {
-					if(childandparentwords.get(y).size()>levelindicator[x][0] && childandparentwords.get(y).size()<levelindicator[x][1]) {
+					if(childandparentwords.get(y).size()>=levelindicator[x][0] && childandparentwords.get(y).size()<=levelindicator[x][1]) {
 						for(int z=0; z<childandparentwords.get(y).size(); z++) {
 							filewrite.write(childandparentwords.get(y).get(z) + " ");
 						}
