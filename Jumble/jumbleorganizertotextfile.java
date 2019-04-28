@@ -16,7 +16,7 @@ public class jumbleorganizertotextfile{
 		
 		List<String> list = new ArrayList<>();
 		try {
-			FileReader f = new FileReader("wordlist.txt");
+			FileReader f = new FileReader("temptest.txt");
 			BufferedReader br = new BufferedReader(f);
 			String line;
 			
@@ -151,76 +151,27 @@ public class jumbleorganizertotextfile{
 	
 	public static void writetofile() {
 		try {
-			//writing easy mode into easy.txt
-			File filter1 = new File("easy.txt");
-			filter1.createNewFile();
-			FileWriter fw1 = new FileWriter(filter1);
-			
-			//7-16
-			for(int x=0; x<childandparentwords.size(); x++) {
-				if(childandparentwords.get(x).size()>7 && childandparentwords.get(x).size()<16) {
-					for(int z=0; z<childandparentwords.get(x).size(); z++) {
-						fw1.write(childandparentwords.get(x).get(z) + " ");
+			int levelindicator[][]= {{3,5},{9,18},{1,3}};
+			for(int x=0; x<3; x++) {
+				int temper = x+1;
+				String temp = (temper)+".txt";
+				File filter1 = new File(temp);
+				filter1.createNewFile();
+				FileWriter filewrite = new FileWriter(filter1);
+				for(int y=0; y<childandparentwords.size(); y++) {
+					if(childandparentwords.get(y).size()>levelindicator[x][0] && childandparentwords.get(y).size()<levelindicator[x][1]) {
+						for(int z=0; z<childandparentwords.get(y).size(); z++) {
+							filewrite.write(childandparentwords.get(y).get(z) + " ");
+						}
+						filewrite.write("\n");
+						System.out.println("Writing level " + temp + ": " + (y+1) + "/" + childandparentwords.size());
 					}
-					fw1.write("\n");
-					System.out.println("Writing easy mode: " + (x+1) + "/" + childandparentwords.size());
 				}
+				filewrite.flush();
+				filewrite.close();
 			}
-			fw1.flush();
 			
 			
-			//writing medium mode into medium.txt
-			File filter2 = new File("medium.txt");
-			filter2.createNewFile();
-			FileWriter fw2 = new FileWriter(filter2);
-			
-			//15-21
-			for(int x=0; x<childandparentwords.size(); x++) {
-				if(childandparentwords.get(x).size()>15 && childandparentwords.get(x).size()<21) {
-					for(int z=0; z<childandparentwords.get(x).size(); z++) {
-						fw2.write(childandparentwords.get(x).get(z) + " ");
-					}
-					fw2.write("\n");
-					System.out.println("Writing medium mode: " + (x+1) + "/" + childandparentwords.size());
-				}
-			}
-			fw2.flush();
-			
-			
-			//writing hard mode into hard.txt
-			File filter3 = new File("hard.txt");
-			filter3.createNewFile();
-			FileWriter fw3 = new FileWriter(filter3);
-			
-			//20-26
-			for(int x=0; x<childandparentwords.size(); x++) {
-				if(childandparentwords.get(x).size()>20 && childandparentwords.get(x).size()<26) {
-					for(int z=0; z<childandparentwords.get(x).size(); z++) {
-						fw3.write(childandparentwords.get(x).get(z) + " ");
-					}
-					fw3.write("\n");
-					System.out.println("Writing hard mode: " + (x+1) + "/" + childandparentwords.size());
-				}
-			}
-			fw3.flush();
-			
-			
-			//writing insane mode into insane.txt
-			File filter4 = new File("insane.txt");
-			filter4.createNewFile();
-			FileWriter fw4 = new FileWriter(filter4);
-			
-			//25+
-			for(int x=0; x<childandparentwords.size(); x++) {
-				if(childandparentwords.get(x).size()>25) {
-					for(int z=0; z<childandparentwords.get(x).size(); z++) {
-						fw4.write(childandparentwords.get(x).get(z) + " ");
-					}
-					fw4.write("\n");
-					System.out.println("Writing insane mode: " + (x+1) + "/" + childandparentwords.size());
-				}
-			}
-			fw4.flush();
 		}
 		catch(Exception e) {
 			System.out.println(e);
