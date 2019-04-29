@@ -3,7 +3,7 @@ var fs = require('fs');
 var data="";
 let counter=0;
 fs.readFile('C:/Users/jared/Desktop/Project/GameWebApplication/Jumble/levels/12.txt', 'utf8',function(err, data) {
-
+f
     var doublearray = new Array();
     for(let x=0; x<data.length; x++){
         let array = new Array();
