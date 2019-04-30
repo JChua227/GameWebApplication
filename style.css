@@ -17,7 +17,7 @@ nav{
 }
 
 body{
-    background-image: linear-gradient(to bottom right,rgba(160, 44, 196, 0.897),rgba(32, 116, 146, 0.932),rgba(33, 171, 221, 0.699), rgba(59, 180, 134, 0.747));
+    background: hsla(0, 17%, 42%, 0.466);
     height: 100vh;  
 }
 
