@@ -1,0 +1,33 @@
+.characterplacement{
+    text-align: center;
+    padding: 50px;
+}
+
+.wordsleft{
+    float:left;
+    padding-left: 200px;
+}
+
+.usercreate{
+    text-align: center;
+}
+
+.wordscreated{
+    float:right;
+    padding-right: 200px;
+}
+
+.wordsleftcount{
+    float:left;
+}
+
+.picklevel{
+    text-align:center;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+.newgame{
+    text-align:center;
+    padding-bottom: 25px;
+}
