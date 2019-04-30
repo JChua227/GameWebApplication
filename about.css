@@ -1,0 +1,47 @@
+/* resize picture of myself */
+.info{
+    float:left;
+    width: 450px;
+    padding-left: 25%;
+}
+
+/* image of myself */
+.picofme{
+    float:right;
+    padding-right: 25%;
+    width:150px;
+}
+
+/* container storing both properties */
+.infoandpicofme{
+    margin:auto;
+    padding-top: 50px;
+}
+
+/* link for github */
+.github{
+    padding-top: 240px;
+    text-align: center;
+}
+
+/* languages text */
+.languagesused{
+    text-align: center;
+    padding-top: 50px;
+    padding-right: 43%;
+}
+
+/* languages pictures div */
+.picture-of-languages{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* individual pictures */
+.htmlpic,.csspic,.javascriptpic,.javapic{
+    padding: 50px;
+    height:150px;
+    
+}
+
