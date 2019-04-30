@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link href="..\style.css" type="text/css" rel="stylesheet">
     <link href="jumble.css" type="text/css" rel="stylesheet">
+    <script src="jumble.js"></script>
 </head>
 
 
@@ -19,7 +20,7 @@
 
     <form class="picklevel">
         Select Your Level:
-        <select id="mySelect">
+        <select id="selectvalue">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -36,9 +37,9 @@
     </form>
     
     <div class="newgame">
-    <input type="button" onclick="generatelevel()" value="Play New Game">
+        <input type="button" onclick="generatelevel()" value="Play New Game">
     </div>
-
+    
     <div class="characterplacement">
         <p id="characterplacement">(Set of Characters)</p>
     </div>
@@ -57,7 +58,11 @@
         </div>
     </div>
 
+    <br>
     
+    <div class="wordlist">
+        <p><u>Words Created</u></p>
+    </div>
     
 </body>
 </html>

@@ -1,10 +1,13 @@
-picklevel();
+var answer = new Array();
+var levelarray = new Array();
+var link = 'C:/Users/jared/Desktop/Project/GameWebApplication/Jumble/levels/3.txt';
 
-function picklevel(){
+function generatelevel(){
+    var level = 3; /* document.getElementById("selectvalue").value; */ 
+
     var fs = require('fs');
     var data="";
-    let counter=0;
-    fs.readFile('C:/Users/jared/Desktop/Project/GameWebApplication/Jumble/levels/12.txt', 'utf8',function(err, data) {
+    fs.readFile(link, 'utf8',function(err, data) {
 
         var doublearray = new Array();
         for(let x=0; x<data.length; x++){
@@ -29,6 +32,7 @@ function picklevel(){
             
             doublearray.push(array);
         }
+        levelarray = doublearray.slice();
         console.log(doublearray);
     });
 }
