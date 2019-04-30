@@ -4,6 +4,7 @@
     <title>Jumble</title>
     <meta charset="UTF-8">
     <link href="..\style.css" type="text/css" rel="stylesheet">
+    <link href="jumble.css" type="text/css" rel="stylesheet">
 </head>
 
 
@@ -15,6 +16,48 @@
             <a href="..\about.html"><strong>About</strong></a>
         </nav>
     </main>
+
+    <form class="picklevel">
+        Select Your Level:
+        <select id="mySelect">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+    </form>
+    
+    <div class="newgame">
+    <input type="button" onclick="generatelevel()" value="Play New Game">
+    </div>
+
+    <div class="characterplacement">
+        <p id="characterplacement">(Set of Characters)</p>
+    </div>
+
+    <div class="usercreate">
+        <input type="text" name="usercreate" placeholder="Create a word from the list">
+    </div>
+
+    <div class="wordstatus">
+        <div class="wordsleft">
+            <p id="wordsleft"><u>Amount of Words Left: </u></p>
+        </div>
+
+        <div class="wordscreated">
+            <p id="wordscreated"><u>Amount of Words Created: </u></p>
+        </div>
+    </div>
+
+    
     
 </body>
 </html>
