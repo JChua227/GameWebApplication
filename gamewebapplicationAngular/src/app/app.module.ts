@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { TictactoeComponent } from './components/tictactoe/tictactoe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TictactoeComponent
+    NavbarComponent,
+    TictactoeComponent,
   ],
   imports: [
     BrowserModule

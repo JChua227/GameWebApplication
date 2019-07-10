@@ -1,10 +1,24 @@
 <div>
-    <ul *ngFor="let activity of list; let x = index">
-        <h4>Activity: {{ activity.activity }}</h4>
-        <h4>Length: {{ activity.length }}</h4>
-        <h4>Rating: {{ activity.rating }}</h4>
-        <div *ngIf="x!=list.length-1">
-            <p>-----------------------------------</p>
-        </div>
-    </ul>
+    <main>
+        <p class="player1score" id="player1score">Player 1: 0</p>
+        <p class="player2score" id="player2score">Player 2: 0</p>
+
+        <table id="table">
+            <tr>
+                <td id="0,0" onclick="input(0,0)"><p id="0 0"></p></td>
+                <td id="0,1" onclick="input(0,1)"><p id="0 1"></p></td>
+                <td id="0,2" onclick="input(0,2)"><p id="0 2"></p></td>
+            </tr>
+            <tr>
+                <td id="1,0" onclick="input(1,0)"><p id="1 0"></p></td>
+                <td id="1,1" onclick="input(1,1)"><p id="1 1"></p></td>
+                <td id="1,2" onclick="input(1,2)"><p id="1 2"></p></td>
+            </tr>
+            <tr>
+                <td id="2,0" onclick="input(2,0)"><p id="2 0"></p></td>
+                <td id="2,1" onclick="input(2,1)"><p id="2 1"></p></td>
+                <td id="2,2" onclick="input(2,2)"><p id="2 2"></p></td>
+            </tr>
+        </table>
+    </main>
 </div>
