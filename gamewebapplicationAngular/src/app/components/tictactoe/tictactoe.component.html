@@ -1,0 +1,10 @@
+<div>
+    <ul *ngFor="let activity of list; let x = index">
+        <h4>Activity: {{ activity.activity }}</h4>
+        <h4>Length: {{ activity.length }}</h4>
+        <h4>Rating: {{ activity.rating }}</h4>
+        <div *ngIf="x!=list.length-1">
+            <p>-----------------------------------</p>
+        </div>
+    </ul>
+</div>
