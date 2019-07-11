@@ -39,7 +39,6 @@ export class TictactoeComponent implements OnInit {
  input(x,y):void{
   this.playercounter++;
 
-  //disable not working...this fixes it a little
   //stops player from marking that spot
   //then gives player another turn until they hit a valid spot
   if(this.grid[x][y]!=0){
@@ -114,6 +113,7 @@ export class TictactoeComponent implements OnInit {
       else{
           counter=0;
       }
+      
   }
 
   if(this.grid[0][0]==playervalue && this.grid[1][1]==playervalue && this.grid[2][2]==playervalue){
@@ -122,6 +122,7 @@ export class TictactoeComponent implements OnInit {
   if(this.grid[2][0]==playervalue && this.grid[1][1]==playervalue && this.grid[0][2]==playervalue){
       return true;
   }
+  return false;
 }
 
 //checks for tie condition
@@ -138,5 +139,9 @@ export class TictactoeComponent implements OnInit {
     if(counter==9){
         return true;
     }
+  }
+
+  dofunction(event):void{
+      console.log(event);
   }
 }
