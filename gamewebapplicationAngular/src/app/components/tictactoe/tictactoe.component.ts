@@ -20,7 +20,6 @@ export class TictactoeComponent implements OnInit {
     
   }
 
-
   resetboard():void{
     this.playercounter=-1;
     if(this.player1score+this.player2score>0){
