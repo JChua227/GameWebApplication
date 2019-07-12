@@ -49,38 +49,42 @@ export class TictactoeComponent implements OnInit {
   if(this.playercounter%2==0){
       this.grid[x][y]=1;
       document.getElementById(x + " " + y).innerHTML="X";
-      setTimeout(function(){
-          if(this.check(1)){
-              alert("Player 1 wins!");
+      let checkPlayer = this.check(1);
+
+      setTimeout(() => {
+          if(checkPlayer) {
+              alert("Player 1 wins");
               this.player1score++;
               document.getElementById("player1score").innerHTML="Player 1: " + this.player1score;
               this.resetboard();
           }
-      }, 15);
+      }, 15)
 
   }
   else{
       this.grid[x][y]=2;
       document.getElementById(x + " " + y).innerHTML="O";
-      setTimeout(function(){
-          if(this.check(2)){
-              alert("Player 2 wins!");
-              this.player2score++;
-              document.getElementById("player2score").innerHTML="Player 2: " + this.player2score;
-              this.resetboard();
-          }
-      }, 15);
+      var checkPlayer = this.check(2);
+    setTimeout(() => {
+        if(checkPlayer) {
+            alert("Player 2 wins");
+            this.player2score++;
+            document.getElementById("player2score").innerHTML="Player 2: " + this.player2score;
+            this.resetboard();
+        }
+    }, 15);
   }
 
   //check for tie
+  let isTie = this.checktie();
   setTimeout(function(){
-      if(this.checktie()){
-          alert("Its a tie!");
-          this.player1score += .5;
-          this.player2score += .5;
-          document.getElementById("player1score").innerHTML="Player 1: " + this.player1score;
-          document.getElementById("player2score").innerHTML="Player 2: " + this.player2score;
-          this.resetboard();
+      if(isTie) {
+        alert("Its a tie!");
+        this.player1score += .5;
+        this.player2score += .5;
+        document.getElementById("player1score").innerHTML="Player 1: " + this.player1score;
+        document.getElementById("player2score").innerHTML="Player 2: " + this.player2score;
+        this.resetboard();
       }
   }, 15);
 }
