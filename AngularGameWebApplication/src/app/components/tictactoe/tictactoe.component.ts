@@ -47,10 +47,11 @@ export class TictactoeComponent implements OnInit {
 
   //player move
   if(this.playercounter%2==0){
+      let check = this.check(1);
       this.grid[x][y]=1;
       document.getElementById(x + " " + y).innerHTML="X";
       setTimeout(function(){
-          if(this.check(1)){
+          if(check){
               alert("Player 1 wins!");
               this.player1score++;
               document.getElementById("player1score").innerHTML="Player 1: " + this.player1score;
@@ -60,10 +61,11 @@ export class TictactoeComponent implements OnInit {
 
   }
   else{
+      let check = this.check(2);
       this.grid[x][y]=2;
       document.getElementById(x + " " + y).innerHTML="O";
       setTimeout(function(){
-          if(this.check(2)){
+          if(check){
               alert("Player 2 wins!");
               this.player2score++;
               document.getElementById("player2score").innerHTML="Player 2: " + this.player2score;
@@ -72,9 +74,10 @@ export class TictactoeComponent implements OnInit {
       }, 15);
   }
 
+  let checktie = this.checktie();
   //check for tie
   setTimeout(function(){
-      if(this.checktie()){
+      if(checktie){
           alert("Its a tie!");
           this.player1score += .5;
           this.player2score += .5;
@@ -112,7 +115,7 @@ export class TictactoeComponent implements OnInit {
       else{
           counter=0;
       }
-      
+      return false;
   }
 
   if(this.grid[0][0]==playervalue && this.grid[1][1]==playervalue && this.grid[2][2]==playervalue){
@@ -138,7 +141,7 @@ export class TictactoeComponent implements OnInit {
     if(counter==9){
         return true;
     }
+    return false;
   }
-
 }
 
