@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tictactoe.component.css']
 })
 export class TictactoeComponent implements OnInit {
-  
+
   private grid:number[][];
   private playercounter:number;
   private player1score:number=0;
@@ -17,7 +17,6 @@ export class TictactoeComponent implements OnInit {
   }
 
   ngOnInit() {
-    
   }
 
   resetboard():void{
@@ -87,7 +86,7 @@ export class TictactoeComponent implements OnInit {
 }
 
 //checks for win condition
- check(playervalue):boolean{
+  check(playervalue):boolean{
   for(let x=0; x<3; x++){
       let counter=0;
       for(let y=0; y<3; y++){
@@ -141,7 +140,5 @@ export class TictactoeComponent implements OnInit {
     }
   }
 
-  dofunction(event):void{
-      console.log(event);
-  }
 }
+

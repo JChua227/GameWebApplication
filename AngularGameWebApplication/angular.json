@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gamewebapplicationAngular": {
+    "AngularGameWebApplication": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/gamewebapplicationAngular",
+            "outputPath": "dist/AngularGameWebApplication",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "gamewebapplicationAngular:build"
+            "browserTarget": "AngularGameWebApplication:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "gamewebapplicationAngular:build:production"
+              "browserTarget": "AngularGameWebApplication:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gamewebapplicationAngular:build"
+            "browserTarget": "AngularGameWebApplication:build"
           }
         },
         "test": {
@@ -106,15 +106,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "gamewebapplicationAngular:serve"
+            "devServerTarget": "AngularGameWebApplication:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "gamewebapplicationAngular:serve:production"
+              "devServerTarget": "AngularGameWebApplication:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "gamewebapplicationAngular"
+  "defaultProject": "AngularGameWebApplication"
 }

@@ -1,0 +1,33 @@
+h1{
+    margin-top: 50px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  nav{
+    font-style: oblique;
+    text-align: center;
+    margin: auto;
+    border: solid;
+    /* width fixates the border */
+    width: 120px;
+    height: 20px;
+    display: table;
+  }
+  
+  body{
+      background: hsla(0, 17%, 42%, 0.466);
+      height: 100vh;  
+  }
+  
+  .GameText{
+    text-align:center;
+    padding-top: 100px;
+  }
+  
+  .test{
+    color: yellow;
+  }
+  
+  
