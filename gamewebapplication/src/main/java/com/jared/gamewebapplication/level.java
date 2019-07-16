@@ -15,7 +15,7 @@ public class level {
 
     public level(int level){
         this.level = level;
-        this.setList(level);
+        this.setSetOfWords(level);
         this.setParentWord();
     }
 
@@ -31,11 +31,11 @@ public class level {
         this.parentWord = this.setOfWords.get(0);
     }
 
-    public List<String> getList(){
+    public List<String> getSetOfWords(){
         return this.setOfWords;
     }
 
-    public void setList(int level){
+    public void setSetOfWords(int level){
         try {
             FileReader filereader = new FileReader("levels/" + level + ".txt");
             BufferedReader br = new BufferedReader(filereader);
