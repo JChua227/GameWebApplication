@@ -1,4 +1,4 @@
-package com.jared.gamewebapplication;
+package com.jared.gamewebapplication.Jumble;
 
 
 import java.io.BufferedReader;

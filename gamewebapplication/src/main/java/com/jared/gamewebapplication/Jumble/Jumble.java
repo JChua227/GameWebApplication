@@ -1,10 +1,10 @@
-package com.jared.gamewebapplication;
+package com.jared.gamewebapplication.Jumble;
 
 import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping(value="/level")
+@RequestMapping("/level")
 public class Jumble {
 
 
@@ -13,4 +13,6 @@ public class Jumble {
         return new level(levelNumber);
     }
 
+
 }
+
