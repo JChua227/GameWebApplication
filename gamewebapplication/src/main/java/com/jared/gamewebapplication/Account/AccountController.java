@@ -22,8 +22,8 @@ public class AccountController {
         return this.accountService.findAllAccount();
     }
 
-    @PutMapping("/Add")
-    public void addAccount(Account account){
+    @PutMapping("/add")
+    public void addAccount(@RequestBody Account account){
         this.accountService.addAccount(account);
     }
 
