@@ -22,6 +22,11 @@ public class AccountController {
         return this.accountService.findAllAccount();
     }
 
+    @GetMapping("/findById")
+    public Account findByAccountId(@RequestBody int accountid){
+        return accountService.findByAccountId(accountid);
+    }
+
     @PutMapping("/add")
     public void addAccount(@RequestBody Account account){
         this.accountService.addAccount(account);
