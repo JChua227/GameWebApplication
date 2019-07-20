@@ -19,11 +19,15 @@ public class Account {
         this.password = password;
     }
 
+    public Account(){
+
+    }
+
     public int getAccountId(){
         return this.accountId;
     }
 
-    public String getUserName(){
+    public String getUsername(){
         return this.username;
     }
 

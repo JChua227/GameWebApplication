@@ -3,7 +3,6 @@ package com.jared.gamewebapplication.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -22,9 +21,9 @@ public class AccountController {
         return this.accountService.findAllAccount();
     }
 
-    @GetMapping("/findById")
-    public Account findByAccountId(@RequestBody int accountid){
-        return accountService.findByAccountId(accountid);
+    @GetMapping("/findById/{accountid}")
+    public Account findByAccountAccountId(@PathVariable(value="accountid")int accountid){
+        return accountService.findAccountId(accountid);
     }
 
     @PutMapping("/add")
@@ -33,12 +32,12 @@ public class AccountController {
     }
 
     @PostMapping("/update")
-    public void updateAccount(Account account){
+    public void updateAccount(@RequestBody Account account){
         this.accountService.updateAccount(account);
     }
 
-    @DeleteMapping("/deleteById")
-    public void deleteAccountById(int accountId){
+    @DeleteMapping("/deleteById/{accountid}")
+    public void deleteAccountById(@PathVariable(value="accountId")int accountId){
         this.accountService.deleteAccountById(accountId);
     }
 }

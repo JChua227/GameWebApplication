@@ -19,7 +19,7 @@ public class AccountService {
         return this.accountRepository.findAll();
     }
 
-    public Account findByAccountId(int accountId){
+    public Account findAccountId(int accountId){
         return this.accountRepository.findByAccountId(accountId);
     }
 
