@@ -33,13 +33,14 @@ public class AccountService {
         }
     }
 
-    public void updateAccount(int accountId,Account account){
-        for(int x=0; x<this.accountRepository.findAll().size(); x++){
-            if(this.accountRepository.findAll().get(x).getAccountId()==accountId){
-                this.accountRepository.findAll().set(x,account);
-                return;
+    public void updateAccount(Account account, int accountId){
+        for(Account a:this.accountRepository.findAll()){
+            if(a.getAccountId()==accountId){
+                this.accountRepository.delete(a);
+                break;
             }
         }
+        this.accountRepository.save(account);
     }
 
     public void deleteAccountById(int accountId){

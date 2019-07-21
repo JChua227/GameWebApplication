@@ -36,12 +36,12 @@ public class AccountController {
         this.accountService.addMultipleAccount(accountList);
     }
 
-    @PostMapping("/update")
-    public void updateAccount(@RequestBody Account account,int accountid){
-        this.accountService.updateAccount(accountid,account);
+    @PostMapping("/update/{accountid}")
+    public void updateAccount(@RequestBody Account account,@PathVariable(value="accountid")int accountid){
+        this.accountService.updateAccount(account,accountid);
     }
 
-    @DeleteMapping("/deleteById/{accountid}")
+    @DeleteMapping("/deleteById/{accountId}")
     public void deleteAccountById(@PathVariable(value="accountId")int accountId){
         this.accountService.deleteAccountById(accountId);
     }
