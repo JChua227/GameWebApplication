@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TictactoeComponent } from './components/tictactoe/tictactoe.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { JumbleComponent } from './components/jumble/jumble.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TictactoeComponent,
-    NavbarComponent
+    NavbarComponent,
+    JumbleComponent
   ],
   imports: [
     BrowserModule,
