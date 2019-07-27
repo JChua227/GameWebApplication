@@ -22,7 +22,7 @@ public class AccountController {
     }
 
     @GetMapping("/findById/{accountid}")
-    public Account findByAccountAccountId(@PathVariable(value="accountid")int accountid){
+    public Account findByAccountId(@PathVariable(value="accountid")int accountid){
         return accountService.findAccountId(accountid);
     }
 
