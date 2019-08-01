@@ -3,20 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TictactoeComponent } from './components/tictactoe/tictactoe.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { JumbleComponent } from './components/jumble/jumble.component';
+import { TictactoeComponent } from './childComponents/tictactoe/tictactoe.component';
+import { NavbarComponent } from './childComponents/navbar/navbar.component';
+import { JumbleComponent } from './childComponents/jumble/jumble.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TicTacToeComponent } from './parentComponents/tic-tac-toe/tic-tac-toe.component';
+import { ParentJumbleComponent } from './parentComponents/parent-jumble/parent-jumble.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TictactoeComponent,
     NavbarComponent,
-    JumbleComponent
+    JumbleComponent,
+    TicTacToeComponent,
+    ParentJumbleComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
