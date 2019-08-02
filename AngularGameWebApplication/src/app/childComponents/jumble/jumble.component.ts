@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JumbleService } from '../../services/jumble.service';
+import { levelSet } from '../../models/levelSet';
 
 @Component({
   selector: 'app-jumble',
@@ -8,15 +9,18 @@ import { JumbleService } from '../../services/jumble.service';
 })
 export class JumbleComponent implements OnInit {
 
-  listOfChildWords:string[];
+  levelset:levelSet;
 
   constructor(private jumbleService:JumbleService) { }
 
   ngOnInit() {
+    this.getSetOfLevel();
   }
 
   getSetOfLevel(){
-    this.jumbleService.getSetOfLevel().subscribe(x=>{this.listOfChildWords=x});
+    this.jumbleService.getSetOfLevel(1).subscribe(x=>{
+       this.levelset=x;
+    });
   }
 
 }
