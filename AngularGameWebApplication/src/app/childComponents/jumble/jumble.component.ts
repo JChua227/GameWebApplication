@@ -22,7 +22,6 @@ export class JumbleComponent implements OnInit {
   }
 
   validate(){
-    console.log(this.word + "hi");
     if(this.levelset.setOfWords.includes(this.word) && !this.typed.includes(this.word)){
       this.typed.push(this.word);
     }
@@ -31,9 +30,12 @@ export class JumbleComponent implements OnInit {
       this.typed=[''];
       this.getSetOfLevel();
     }
+    this.word='';
   }
 
   getSetOfLevel(){
+    this.word='';
+    this.typed=[''];
     this.jumbleService.getSetOfLevel(this.level).subscribe(x=>{
       this.levelset=x;
     });

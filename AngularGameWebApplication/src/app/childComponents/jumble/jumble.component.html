@@ -1,8 +1,8 @@
 <div class="inputForm">
     <p>Choose a level and hit Begin: </p>
 
-    <form (ngSubmit)="getSetOfLevel()">
-        <select name="level" [(ngModel)]="level">
+    <form (ngSubmit)='getSetOfLevel()'>
+        <select name='level' [(ngModel)]='level'>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -21,10 +21,8 @@
         
         <input type="submit" value="Begin">
     
-    </form>
+    </form>    
 
-    <p></p>
-    
 
     <div *ngIf='levelset'>
         <div>
@@ -32,9 +30,10 @@
         </div>
 
         <form (ngSubmit)='validate()'>
-            <input type='text' name='word' [(ngModule)]='word' placeholder='Create A Word Here...'>
+            <input type='text' name='word' [(ngModel)]='word' placeholder='Create A Word Here...' id='userInput'>
         </form>
     </div>
+
 
     <div *ngIf='typed!=0'>
         <h4 class="typedWords">Found Words</h4>
