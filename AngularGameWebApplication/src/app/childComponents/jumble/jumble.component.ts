@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { JumbleService } from '../../services/jumble.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { levelSet } from '../../models/levelSet';
 
 @Component({
@@ -9,18 +8,20 @@ import { levelSet } from '../../models/levelSet';
 })
 export class JumbleComponent implements OnInit {
 
-  levelset:levelSet;
+  @Input()levelset:levelSet;
+  typed:string[];
 
-  constructor(private jumbleService:JumbleService) { }
+  constructor() {
+  }
 
   ngOnInit() {
-    this.getSetOfLevel();
   }
 
-  getSetOfLevel(){
-    this.jumbleService.getSetOfLevel(1).subscribe(x=>{
-       this.levelset=x;
-    });
+  validate(word:string){
+    if(this.levelset.setOfWords.includes(word) && !this.typed.includes(word)){
+      this.typed.push(word);
+    }
   }
+
 
 }

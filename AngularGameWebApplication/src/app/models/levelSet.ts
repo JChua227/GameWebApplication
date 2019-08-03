@@ -1,5 +1,5 @@
 export class levelSet{
-    level:string;
+    level:number;
     parentWord:string;
     setOfWords:string[];
 }

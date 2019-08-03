@@ -20,7 +20,14 @@
     
     <input type="button" value="Begin">
 
-    <div>
-        <p>{{ levelset.level }}</p>
+    <div *ngIf='levelset'>
+        <h3>{{ levelset.parentWord }}</h3>
+        <p>{{ levelset.setOfWords }}</p>
+    </div>
+
+    <div *ngIf='typed'>
+        <div *ngFor='let x of typed'>
+            <p>{{ x }}</p>
+        </div>
     </div>
 </div>
