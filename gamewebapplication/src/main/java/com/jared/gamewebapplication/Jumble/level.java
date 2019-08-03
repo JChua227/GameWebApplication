@@ -10,7 +10,7 @@ import java.util.Random;
 public class level {
 
     private int level;
-    private String parentWord;
+    private List<Character> parentWord;
     private List<String> setOfWords;
 
     public level(int level){
@@ -23,12 +23,33 @@ public class level {
         return this.level;
     }
 
-    public String getParentWord() {
+    public List<Character> getParentWord() {
         return this.parentWord;
     }
 
     public void setParentWord(){
-        this.parentWord = this.setOfWords.get(0);
+        String word = this.setOfWords.get(0);
+        List<Integer> list = new ArrayList<>();
+        for(int x=0; x<word.length(); x++){
+            list.add(x);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+        while(!list.isEmpty()){
+            int x = random.nextInt(list.size());
+            sb.append(word.charAt(list.get(x)));
+            list.remove(x);
+        }
+
+        List<Character> letters = new ArrayList<>();
+        for(int x=0; x<sb.toString().length(); x++){
+            letters.add(sb.toString().charAt(x));
+            if(x!=sb.toString().length()-1){
+                letters.add(' ');
+            }
+        }
+        this.parentWord = letters;
     }
 
     public List<String> getSetOfWords(){
