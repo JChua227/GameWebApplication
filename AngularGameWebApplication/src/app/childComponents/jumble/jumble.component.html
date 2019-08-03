@@ -1,33 +1,46 @@
 <div class="inputForm">
     <p>Choose a level and hit Begin: </p>
 
-    <select>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-    </select>
+    <form (ngSubmit)="getSetOfLevel()">
+        <select name="level" [(ngModel)]="level">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+
+        <p></p>
+        
+        <input type="submit" value="Begin">
+    
+    </form>
 
     <p></p>
     
-    <input type="button" value="Begin">
 
     <div *ngIf='levelset'>
-        <h3>{{ levelset.parentWord }}</h3>
-        <p>{{ levelset.setOfWords }}</p>
+        <div>
+            <h2>{{ levelset.parentWord.join('') }}</h2>
+        </div>
+
+        <form (ngSubmit)='validate()'>
+            <input type='text' name='word' [(ngModule)]='word' placeholder='Create A Word Here...'>
+        </form>
     </div>
 
-    <div *ngIf='typed'>
+    <div *ngIf='typed!=0'>
+        <h4 class="typedWords">Found Words</h4>
         <div *ngFor='let x of typed'>
             <p>{{ x }}</p>
         </div>
     </div>
+
 </div>
