@@ -10,6 +10,8 @@ import { JumbleComponent } from './childComponents/jumble/jumble.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TicTacToeComponent } from './parentComponents/tic-tac-toe/tic-tac-toe.component';
 import { ParentJumbleComponent } from './parentComponents/parent-jumble/parent-jumble.component';
+import { HomeComponent } from './parentComponents/home/home.component';
+import { AboutComponent } from './parentComponents/about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ParentJumbleComponent } from './parentComponents/parent-jumble/parent-j
     NavbarComponent,
     JumbleComponent,
     TicTacToeComponent,
-    ParentJumbleComponent
+    ParentJumbleComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
