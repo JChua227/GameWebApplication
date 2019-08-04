@@ -12,6 +12,7 @@ import { TicTacToeComponent } from './parentComponents/tic-tac-toe/tic-tac-toe.c
 import { ParentJumbleComponent } from './parentComponents/parent-jumble/parent-jumble.component';
 import { HomeComponent } from './parentComponents/home/home.component';
 import { AboutComponent } from './parentComponents/about/about.component';
+import { LoginComponent } from './parentComponents/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AboutComponent } from './parentComponents/about/about.component';
     TicTacToeComponent,
     ParentJumbleComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
