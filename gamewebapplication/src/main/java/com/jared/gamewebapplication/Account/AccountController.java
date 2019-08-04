@@ -28,8 +28,15 @@ public class AccountController {
     }
 
     @PutMapping("/add")
-    public void addAccount(@RequestBody Account account){
-        this.accountService.addAccount(account);
+    public boolean addAccount(@RequestBody Account account){
+        try {
+            this.accountService.findByUsername(account.getUsername()).getUsername().equalsIgnoreCase(account.getUsername());
+            return false;
+        }
+        catch(Exception e) {
+            this.accountService.addAccount(account);
+        }
+        return true;
     }
 
     @PutMapping("/addMultipleAccount")

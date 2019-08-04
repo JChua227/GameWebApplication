@@ -23,6 +23,10 @@ public class AccountService {
         return this.accountRepository.findByAccountId(accountId);
     }
 
+    public Account findByUsername(String name){
+        return this.accountRepository.findByUsername(name);
+    }
+
     public void addAccount(Account account){
         this.accountRepository.save(account);
     }
