@@ -1,0 +1,18 @@
+.login{
+    width:50%;
+    float:left;
+}
+
+.register{
+    width:50%;
+    float:right;
+}
+
+.board{
+    margin-top:50px;
+    text-align: center;
+}
+
+input{
+    margin-top:10px;
+}
