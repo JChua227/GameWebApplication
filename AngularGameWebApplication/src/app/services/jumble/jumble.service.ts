@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { levelSet } from '../models/levelSet';
+import { levelSet } from '../../models/levelSet';
 
 @Injectable({
   providedIn: 'root'

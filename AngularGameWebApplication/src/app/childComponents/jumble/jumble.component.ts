@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { levelSet } from '../../models/levelSet';
-import {JumbleService } from '../../services/jumble.service';
+import {JumbleService } from '../../services/jumble/jumble.service';
 
 @Component({
   selector: 'app-jumble',
