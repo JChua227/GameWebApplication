@@ -10,6 +10,8 @@ import { levelSet } from '../../models/levelSet';
 })
 export class ParentJumbleComponent implements OnInit {
 
+  title:string='Jumble';
+
   constructor() { }
 
   ngOnInit() {
