@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login/login.service';
-import { UserForm } from 'src/app/models/UserForm';
+import { UserForm } from '../../models/UserForm';
 import { NavbarComponent } from '../../childComponents/navbar/navbar.component';
+import { Password } from '../../models/Password';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +11,14 @@ import { NavbarComponent } from '../../childComponents/navbar/navbar.component';
 })
 export class LoginComponent implements OnInit {
 
-  title:string='Login/Register';
-  userForm:UserForm;
-  usernameExist:string;
+  private title:string='Login/Register';
+  private userForm:UserForm;
+  private validatePassword:Password;
+
+  private username:string;
+  private name:string;
+  private password:string;
+  private reTypePassword:string;
 
   constructor(private loginService:LoginService) { }
 
@@ -20,9 +26,26 @@ export class LoginComponent implements OnInit {
   }
 
   public createAccount(){
+    this.validatePassword.password=this.password;
+    this.validatePassword.reTypePassword=this.reTypePassword;
+
+    if(!this.loginService.validate(this.validatePassword)){
+      alert('Your passwords are not the same, please fix it...');
+      return;
+    }
+
+    this.userForm.username=this.username;
+    this.userForm.name=this.name;
+    this.userForm.password=this.password;
+    this.userForm.reTypePassword=this.reTypePassword;
+
     if(!this.loginService.createAccount(this.userForm)){
-      this.usernameExist='Sorry, this username already exists.';
+      alert('Sorry, this username already exists...');
     }
   }
-  
+
+  public checkLogin(){
+
+  }
+
 }
