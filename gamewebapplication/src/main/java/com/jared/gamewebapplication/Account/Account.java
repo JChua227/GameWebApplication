@@ -12,6 +12,7 @@ public class Account {
     private String username;
     private String name;
     private String password;
+    private String reTypePassword;
 
     public Account(String username, String name, String password){
         this.username = username;
@@ -37,5 +38,12 @@ public class Account {
 
     public String getPassword(){
         return this.password;
+    }
+
+    public boolean validate(){
+        if(!this.password.equals(this.reTypePassword)){
+            return false;
+        }
+        return true;
     }
 }

@@ -39,6 +39,14 @@ public class AccountController {
         return true;
     }
 
+    @GetMapping("/validate")
+    public boolean validate(@RequestBody Password password){
+        if(!password.getPassword().equals(password.getReTypePassword())){
+            return false;
+        }
+        return true;
+    }
+
     @PutMapping("/addMultipleAccount")
     public void addMultipleAccount(@RequestBody List<Account> accountList){
         this.accountService.addMultipleAccount(accountList);
