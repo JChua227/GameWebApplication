@@ -39,7 +39,7 @@ public class AccountController {
         return true;
     }
 
-    @GetMapping("/validate")
+    @PutMapping("/validate")
     public boolean validate(@RequestBody Password password){
         if(!password.getPassword().equals(password.getReTypePassword())){
             return false;

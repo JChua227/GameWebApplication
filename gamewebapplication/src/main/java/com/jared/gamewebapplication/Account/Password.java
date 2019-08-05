@@ -1,10 +1,12 @@
 package com.jared.gamewebapplication.Account;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Password {
 
+    @Id
     private String password;
     private String reTypePassword;
 
