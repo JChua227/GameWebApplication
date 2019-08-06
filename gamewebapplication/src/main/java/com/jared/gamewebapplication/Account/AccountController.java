@@ -27,7 +27,7 @@ public class AccountController {
         return accountService.findAccountId(accountid);
     }
 
-    @PutMapping("/add")
+    @PostMapping("/add")
     public boolean addAccount(@RequestBody Account account){
         try {
             this.accountService.findByUsername(account.getUsername()).getUsername().equalsIgnoreCase(account.getUsername());
@@ -39,7 +39,7 @@ public class AccountController {
         return true;
     }
 
-    @PutMapping("/validate")
+    @PostMapping("/validate")
     public boolean validate(@RequestBody Password password){
         if(!password.getPassword().equals(password.getReTypePassword())){
             return false;
@@ -47,12 +47,12 @@ public class AccountController {
         return true;
     }
 
-    @PutMapping("/addMultipleAccount")
+    @PostMapping("/addMultipleAccount")
     public void addMultipleAccount(@RequestBody List<Account> accountList){
         this.accountService.addMultipleAccount(accountList);
     }
 
-    @PostMapping("/update/{accountid}")
+    @PutMapping("/update/{accountid}")
     public void updateAccount(@RequestBody Account account,@PathVariable(value="accountid")int accountid){
         this.accountService.updateAccount(account,accountid);
     }
