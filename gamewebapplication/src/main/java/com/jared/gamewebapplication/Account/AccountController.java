@@ -2,10 +2,11 @@ package com.jared.gamewebapplication.Account;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sun.security.util.Password;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 @RequestMapping("/account")
 public class AccountController {
@@ -28,33 +29,31 @@ public class AccountController {
     }
 
     @PostMapping("/add")
-    public boolean addAccount(@RequestBody Account account){
-        try {
-            this.accountService.findByUsername(account.getUsername()).getUsername().equalsIgnoreCase(account.getUsername());
-            return false;
+    public Check addAccount(@RequestBody Account account){
+        Check check = new Check();
+        try{
+            if(this.accountService.findByUsername(account.getUsername()).getUsername().equalsIgnoreCase(account.getUsername())) {
+                check.setUsername(true);
+            }
         }
-        catch(Exception e) {
+        catch(NullPointerException e){
+
+        }
+
+        if(!account.validate()){
+            check.setPassword(true);
+        }
+
+        if(check.getPassword().equals("") && check.getUsername().equals("")) {
             this.accountService.addAccount(account);
         }
-        return true;
-    }
 
-    @PostMapping("/validate")
-    public boolean validate(@RequestBody Password password){
-        if(!password.getPassword().equals(password.getReTypePassword())){
-            return false;
-        }
-        return true;
+        return check;
     }
 
     @PostMapping("/addMultipleAccount")
-    public void addMultipleAccount(@RequestBody List<Account> accountList){
+    public void addMultipleAccount(@RequestBody List<Account> accountList) {
         this.accountService.addMultipleAccount(accountList);
-    }
-
-    @PutMapping("/update/{accountid}")
-    public void updateAccount(@RequestBody Account account,@PathVariable(value="accountid")int accountid){
-        this.accountService.updateAccount(account,accountid);
     }
 
     @DeleteMapping("/deleteById/{accountId}")

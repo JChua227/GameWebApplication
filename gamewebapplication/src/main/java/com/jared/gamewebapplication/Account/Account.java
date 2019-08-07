@@ -14,10 +14,11 @@ public class Account {
     private String password;
     private String reTypePassword;
 
-    public Account(String username, String name, String password){
+    public Account(String username, String name, String password, String reTypePassword){
         this.username = username;
         this.name = name;
         this.password = password;
+        this.reTypePassword = reTypePassword;
     }
 
     public Account(){
@@ -38,6 +39,10 @@ public class Account {
 
     public String getPassword(){
         return this.password;
+    }
+
+    public String getReTypePassword(){
+        return this.reTypePassword;
     }
 
     public boolean validate(){
