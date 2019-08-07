@@ -9,7 +9,7 @@ import {JumbleService } from '../../services/jumble/jumble.service';
 })
 export class JumbleComponent implements OnInit {
 
-  @Input()levelset:levelSet;
+  levelset:levelSet;
   typed:string[]=[''];
   level:number;
   word:string;

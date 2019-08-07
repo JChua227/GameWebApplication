@@ -14,12 +14,15 @@
         <form class='register' (ngSubmit)='createAccount()'>
             <h4>Register</h4>
             <input type='text' placeholder='Username' required name='username' [(ngModel)]='username'>
+            <span *ngIf='check!=0'>{{ this.check.username }}</span>
             <br>
             <input type='text' placeholder='Name' required name='name' [(ngModel)]='name'>
             <br>
             <input type='password' placeholder='Password' required name='password' [(ngModel)]='password'>
+            <span *ngIf='check!=0'>{{ check.password }}</span>
             <br>
             <input type='password' placeholder='Re-type Password' required name='reTypePassword' [(ngModel)]='reTypePassword'>
+            <span *ngIf='check!=0'>{{ check.password }}</span>
             <br>
             <input type='submit'>
         </form>
