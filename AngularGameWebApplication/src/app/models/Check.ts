@@ -1,4 +1,6 @@
 export class Check{
-    username:string;
     password:string;
+    username:string;
+    comma:string;
+    success:string;
 }
