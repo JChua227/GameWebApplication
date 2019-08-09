@@ -12,13 +12,11 @@ public class Account {
     private String username;
     private String name;
     private String password;
-    private String reTypePassword;
 
-    public Account(String username, String name, String password, String reTypePassword){
+    public Account(String username, String name, String password){
         this.username = username;
         this.name = name;
         this.password = password;
-        this.reTypePassword = reTypePassword;
     }
 
     public Account(){
@@ -41,12 +39,8 @@ public class Account {
         return this.password;
     }
 
-    public String getReTypePassword(){
-        return this.reTypePassword;
-    }
-
-    public boolean validate(){
-        if(!this.password.equals(this.reTypePassword)){
+    public boolean validate(String reTypePassword){
+        if(!this.password.equals(reTypePassword)){
             return false;
         }
         return true;

@@ -2,7 +2,6 @@ package com.jared.gamewebapplication.Account;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import sun.security.util.Password;
 
 import java.util.List;
 
@@ -28,24 +27,32 @@ public class AccountController {
         return accountService.findAccountId(accountid);
     }
 
-    @PostMapping("/add")
-    public Check addAccount(@RequestBody Account account){
+    @GetMapping("/createaccount/{list}")
+    public Check createAccount(@PathVariable(value="list")List<String>list){
         Check check = new Check();
+        check.setComma(list);
+
+        Account account = new Account(list.get(0),list.get(1),list.get(2));
+
         try{
             if(this.accountService.findByUsername(account.getUsername()).getUsername().equalsIgnoreCase(account.getUsername())) {
                 check.setUsername(true);
             }
         }
         catch(NullPointerException e){
-
+            check.setUsername(false);
         }
 
-        if(!account.validate()){
+        if(!account.validate(list.get(3))){
             check.setPassword(true);
         }
+        else{
+            check.setPassword(false);
+        }
 
-        if(check.getPassword().equals("") && check.getUsername().equals("")) {
+        if(check.getPassword().equals("") && check.getUsername().equals("") && check.getComma().equals("")) {
             this.accountService.addAccount(account);
+            check.setSuccess();
         }
 
         return check;
@@ -59,5 +66,18 @@ public class AccountController {
     @DeleteMapping("/deleteById/{accountId}")
     public void deleteAccountById(@PathVariable(value="accountId")int accountId){
         this.accountService.deleteAccountById(accountId);
+    }
+
+    @GetMapping("/login/{login}")
+    public boolean login(@PathVariable(value = "login")List<String> list){
+        try {
+            if (!this.accountService.findByUsername(list.get(0)).getPassword().equals(list.get(1))) {
+                return false;
+            }
+        }
+        catch(Exception e){
+            return false;
+        }
+        return true;
     }
 }
