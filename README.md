@@ -3,6 +3,9 @@ Web Application for Games
 
 Includes:
 -Tic Tac Toe
--Jumble (in progress)
+-Jumble
 -Connect Four (in progress)
 -Cookie Clicker (in progress)
+
+Features:
+-Login (in progress)
