@@ -1,6 +1,6 @@
-package Service;
+package com.jared.gamewebapplication.Service;
 
-import Repository.AccountRepository;
+import com.jared.gamewebapplication.Repository.AccountRepository;
 import com.jared.gamewebapplication.Account.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

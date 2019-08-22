@@ -1,4 +1,4 @@
-package Repository;
+package com.jared.gamewebapplication.Repository;
 
 import com.jared.gamewebapplication.Account.Account;
 import org.springframework.data.jpa.repository.JpaRepository;

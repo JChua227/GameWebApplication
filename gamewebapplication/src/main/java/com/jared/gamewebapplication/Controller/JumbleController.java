@@ -1,4 +1,4 @@
-package Controller;
+package com.jared.gamewebapplication.Controller;
 
 import com.jared.gamewebapplication.Jumble.level;
 import org.springframework.web.bind.annotation.*;

@@ -1,7 +1,7 @@
-package Controller;
+package com.jared.gamewebapplication.Controller;
 
 import com.jared.gamewebapplication.Account.Account;
-import Service.AccountService;
+import com.jared.gamewebapplication.Service.AccountService;
 import com.jared.gamewebapplication.Account.Check;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
