@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { UserForm } from '../../models/UserForm'; 
 import { Observable } from 'rxjs';
 import { Check } from '../../models/Check';
-import { Login } from '../../models/Login'
+import { Login } from '../../models/Login';
+import { Username } from '../../models/Username';
 
 const httpHeader = {
   headers: new HttpHeaders({
@@ -28,6 +29,10 @@ export class LoginService {
 
   public login(login:Login):Observable<boolean>{
     return this.httpClient.get<boolean>(this.url + '/login/' + login.toArray());
+  }
+
+  public getAccountSession():Observable<string>{
+    return this.httpClient.get<string>(this.url + '/getusername');
   }
 
 }

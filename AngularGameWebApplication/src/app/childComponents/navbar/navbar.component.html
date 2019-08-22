@@ -1,5 +1,7 @@
 <header>
     <h1>{{ title }}</h1>
+    <h6 *ngIf='username!==undefined'>Username: {{ username }}</h6>
+
     <nav>
         <a routerLink=''><strong>Home</strong></a> |
         <a routerLink='/about'><strong>About</strong></a> |

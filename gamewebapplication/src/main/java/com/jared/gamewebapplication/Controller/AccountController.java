@@ -1,8 +1,13 @@
-package com.jared.gamewebapplication.Account;
+package Controller;
 
+import com.jared.gamewebapplication.Account.Account;
+import Service.AccountService;
+import com.jared.gamewebapplication.Account.Check;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @CrossOrigin(origins="http://localhost:4200")
@@ -69,7 +74,7 @@ public class AccountController {
     }
 
     @GetMapping("/login/{login}")
-    public boolean login(@PathVariable(value = "login")List<String> list){
+    public boolean login(@PathVariable(value = "login")List<String> list, HttpServletRequest request){
         try {
             if (!this.accountService.findByUsername(list.get(0)).getPassword().equals(list.get(1))) {
                 return false;
@@ -78,6 +83,21 @@ public class AccountController {
         catch(Exception e){
             return false;
         }
+        HttpSession httpSession = request.getSession();
+        httpSession.setAttribute("username",list.get(0));
         return true;
     }
+
+    @GetMapping("/getusername")
+    public String getUsername(HttpServletRequest request){
+        try {
+            HttpSession httpSession = request.getSession();
+            return httpSession.getAttribute("username").toString();
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return "Guest";
+        }
+    }
+
 }

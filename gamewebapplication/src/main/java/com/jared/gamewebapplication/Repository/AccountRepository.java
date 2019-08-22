@@ -1,5 +1,6 @@
-package com.jared.gamewebapplication.Account;
+package Repository;
 
+import com.jared.gamewebapplication.Account.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

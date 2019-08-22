@@ -5,6 +5,7 @@ import { NavbarComponent } from '../../childComponents/navbar/navbar.component';
 import { Check } from '../../models/Check';
 import { callbackify } from 'util';
 import { Login } from '../../models/Login';
+import { Username } from '../../models/Username';
 
 @Component({
   selector: 'app-login',
@@ -28,6 +29,8 @@ export class LoginComponent implements OnInit {
   private loginUsername:string;
   private loginPassword:string;
 
+  private usename:string;
+
   constructor(private loginService:LoginService) { 
     this.userForm = new UserForm();
     this.login = new Login();
@@ -50,6 +53,8 @@ export class LoginComponent implements OnInit {
     this.login.username = this.loginUsername;
     this.login.password = this.loginPassword;
     this.loginService.login(this.login).subscribe(x=>this.checkLoginStatus=x);
+    
+    this.loginService.getAccountSession().subscribe(x=>this.usename=x);
   }
 
 }
