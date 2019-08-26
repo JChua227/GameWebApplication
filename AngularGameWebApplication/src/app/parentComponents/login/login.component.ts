@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   private loginUsername:string;
   private loginPassword:string;
 
-  private usename:string;
+  private usename:Username;
 
   constructor(private loginService:LoginService) { 
     this.userForm = new UserForm();

@@ -1,6 +1,7 @@
 package com.jared.gamewebapplication.Controller;
 
 import com.jared.gamewebapplication.Account.Account;
+import com.jared.gamewebapplication.Account.Username;
 import com.jared.gamewebapplication.Service.AccountService;
 import com.jared.gamewebapplication.Account.Check;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,15 +90,8 @@ public class AccountController {
     }
 
     @GetMapping("/getusername")
-    public String getUsername(HttpServletRequest request){
-        try {
-            HttpSession httpSession = request.getSession();
-            return httpSession.getAttribute("username").toString();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            return "Guest";
-        }
+    public Username getUsername(HttpSession request){
+        return new Username("Guest");
     }
 
 }

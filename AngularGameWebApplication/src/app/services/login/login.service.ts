@@ -31,8 +31,8 @@ export class LoginService {
     return this.httpClient.get<boolean>(this.url + '/login/' + login.toArray());
   }
 
-  public getAccountSession():Observable<string>{
-    return this.httpClient.get<string>(this.url + '/getusername');
+  public getAccountSession():Observable<Username>{
+    return this.httpClient.get<Username>(this.url + '/getusername');
   }
 
 }
