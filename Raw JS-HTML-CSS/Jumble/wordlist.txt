@@ -53646,6 +53646,7 @@ umpires
 umpiring
 umpteen
 umpteenth
+un
 unabashed
 unabashedly
 unabated
@@ -54478,6 +54479,7 @@ unhurriedly
 unhurt
 unhygienic
 unhyphenated
+uni
 unicameral
 unicellular
 unicorn
@@ -58179,3 +58181,12 @@ ubiquitous
 telium
 biacetyl
 deixis
+quin
+yin
+rin
+ryu
+qi
+ahing
+vang
+vagi
+viga
